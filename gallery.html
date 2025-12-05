@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIS Club - Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="container navbar">
+            <div class="logo-group">
+                <img src="images/university_logo.png" alt="University Logo">
+                <div class="logo"> 
+                    <a href="index.html">
+                        <img src="images/club_logo.png" alt="CIS Club Logo">
+                        <span style="font-weight: 700; font-size: 1.5rem; color: var(--color-primary);">CIS Club</span>
+                    </a>
+                </div>
+            </div>
+            
+            <button class="menu-toggle">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="members.html">Members/Join</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section-padding">
+            <div class="container">
+                <h1>Photo Gallery</h1>
+
+                <p style="margin-bottom: 30px;">Relive the best moments from our workshops, hackathons, and social events. (Please replace placeholder URLs with your actual club photos)</p>
+
+                <div class="gallery-grid o-grid">
+                    
+                    <figure class="gallery-item">
+                        <img src="images/event_hackathon.jpg" alt="Students collaborating on a hackathon project.">
+                        <figcaption>Annual Hackathon 2025</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="images/event_seminar.jpg" alt="Industry professional giving a seminar on AI.">
+                        <figcaption>AI Seminar Series</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="images/event_group.jpg" alt="A large group of CIS club members posing for a photo.">
+                        <figcaption>CIS Club Team Day</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="images/event_workshop.jpg" alt="Hands-on coding workshop in a computer lab.">
+                        <figcaption>Python Workshop</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="images/event_competition.jpg" alt="Students competing in a coding contest.">
+                        <figcaption>Inter-University Coding Competition</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="images/event_social.jpg" alt="Club members networking during a social event.">
+                        <figcaption>Monthly Social Mixer</figcaption>
+                    </figure>
+                    
+                </div>
+            </div>
+        </section>
+
+        <div id="gallery-modal" class="modal">
+            <span class="close-btn">&times;</span>
+            <img class="modal-content" id="modal-image" src="" alt="">
+            <div id="modal-caption" class="modal-caption"></div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CIS Club. All rights reserved. Daffodil International University.</p>
+            <ul class="footer-nav">
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="members.html">Become a Member</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <button id="scroll-to-top" aria-label="Scroll to Top">▲</button>
+    <script src="app.js"></script>
+    <script defer src="script.js"></script>
+</body>
+</html>

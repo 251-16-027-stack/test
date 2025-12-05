@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIS Club - Events</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="container navbar">
+            <div class="logo"><a href="index.html">CIS Club</a></div>
+            <button class="menu-toggle">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="members.html">Members/Join</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section-padding">
+            <div class="container">
+                <h1>Upcoming Club Events</h1>
+
+                <!-- Event Filters -->
+                <div class="event-filters" role="group" aria-label="Event Categories">
+                    <button data-filter="all" class="active">All Events</button>
+                    <button data-filter="workshop">Workshops</button>
+                    <button data-filter="competition">Competitions</button>
+                    <button data-filter="networking">Networking</button>
+                </div>
+
+                <!-- Event List -->
+                <div class="event-list">
+                    <!-- Event Card 1 - Workshop -->
+                    <article class="event-card" data-category="workshop">
+                        <div class="event-date">10<br><span>NOV</span></div>
+                        <div class="event-info">
+                            <h3>JavaScript Deep Dive Workshop</h3>
+                            <p><strong>Category:</strong> Workshop</p>
+                            <p>A hands-on session focusing on modern ES6 features and asynchronous programming.</p>
+                            <a href="#" class="btn btn-primary btn-sm">Register Now</a>
+                        </div>
+                    </article>
+
+                    <!-- Event Card 2 - Competition -->
+                    <article class="event-card" data-category="competition">
+                        <div class="event-date">25<br><span>NOV</span></div>
+                        <div class="event-info">
+                            <h3>Annual Hackathon 2025</h3>
+                            <p><strong>Category:</strong> Competition</p>
+                            <p>24 hours of intense coding, teamwork, and innovation. Prizes for the top 3 teams!</p>
+                            <a href="#" class="btn btn-primary btn-sm">Register Now</a>
+                        </div>
+                    </article>
+
+                    <!-- Event Card 3 - Networking -->
+                    <article class="event-card" data-category="networking">
+                        <div class="event-date">05<br><span>DEC</span></div>
+                        <div class="event-info">
+                            <h3>Industry Mixer with DIU Alumni</h3>
+                            <p><strong>Category:</strong> Networking</p>
+                            <p>Meet successful alumni working at top tech firms. Free refreshments provided.</p>
+                            <a href="#" class="btn btn-primary btn-sm">Register Now</a>
+                        </div>
+                    </article>
+
+                    <!-- Event Card 4 - Workshop -->
+                    <article class="event-card" data-category="workshop">
+                        <div class="event-date">15<br><span>DEC</span></div>
+                        <div class="event-info">
+                            <h3>Introduction to Cloud Computing (AWS)</h3>
+                            <p><strong>Category:</strong> Workshop</p>
+                            <p>Learn the basics of Amazon Web Services and cloud deployment.</p>
+                            <a href="#" class="btn btn-primary btn-sm">Register Now</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CIS Club. All rights reserved. Daffodil International University.</p>
+            <ul class="footer-nav">
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="members.html">Become a Member</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <button id="scroll-to-top" aria-label="Scroll to Top">▲</button>
+
+    <script src="app.js"></script>
+</body>
+</html>

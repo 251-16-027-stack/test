@@ -1,0 +1,456 @@
+/*
+
+|--------------------------------------------------------------------------
+| ITCSS Architecture: style.css
+|--------------------------------------------------------------------------
+| 1. Settings (Design Tokens: Variables, Colors, Fonts)
+| 2. Generic (Reset and Global Box-Sizing)
+| 3. Elements (Unclassed HTML Tags: H1, A, P)
+| 4. Objects (Unstyled Layout Patterns: Grid, Container, Stack)
+| 5. Components (Styled UI Modules: Nav, Card, Button, Scroll-to-Top)
+| 6. Utilities (High-Specificity Helpers)
+*/
+
+
+/* =========================================================================
+   1. SETTINGS: Design Tokens (Colors, Spacing, Typography)
+   ========================================================================= */
+
+:root {
+    /*
+      NEW FORMAL COLOR SCHEME:
+      Primary: Deep Navy Blue (Formal, Authority)
+      Accent: Vibrant Cyan/Teal (Modern, Tech, Energy)
+    */
+    --color-primary: hsl(210, 50%, 15%); /* Deep Navy Blue for text/dark elements */
+    --color-accent: hsl(175, 100%, 30%);  /* Vibrant Cyan/Teal for interaction/links */
+    --color-text-subtle: hsl(210, 10%, 40%); /* Darker Gray for better contrast */
+    --color-background-soft: hsl(210, 30%, 98%); /* Very Pale Blue-Gray */
+    --color-white: #ffffff;
+    
+    /* Typography */
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-body-size: 1.1rem;
+    --font-heading-line-height: 1.1;
+
+    /* Spacing Scale (8px modular scale) */
+    --spacing-xs: 0.5rem;   /* 8px */
+    --spacing-sm: 1rem;     /* 16px */
+    --spacing-md: 1.5rem;   /* 24px */
+    --spacing-lg: 3rem;     /* 48px */
+    --spacing-xl: 5rem;     /* 80px */
+
+    /* Layout & Z-Index */
+    --layout-max-width: 1200px;
+    --z-layer-nav: 100;
+}
+
+
+/* =========================================================================
+   2. GENERIC & ELEMENTS: Reset and Base Styling
+   ========================================================================= */
+
+/* Generic: Modern CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box; 
+    margin: 0;
+}
+
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: var(--font-body-size);
+    color: var(--color-primary);
+    background-color: var(--color-background-soft);
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Media handling - intrinsic responsiveness */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Inherit fonts for form controls */
+input, button, textarea, select { font: inherit; } 
+
+/* Typography polish */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+p { text-wrap: pretty; }
+h1, h2, h3, h4, h5, h6 { 
+    text-wrap: balance; 
+    line-height: var(--font-heading-line-height);
+}
+
+
+/* Elements: Unclassed Tag Styling */
+h1, h2, h3, h4, h5, h6 {
+    margin-block-end: var(--spacing-sm);
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none; /* Removed underline for a cleaner look */
+    text-underline-offset: 3px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+a:hover, a:focus-visible {
+    color: color-mix(in srgb, var(--color-accent) 80%, var(--color-primary));
+    text-decoration: underline; /* Added underline back on hover */
+    outline: 2px solid var(--color-accent); 
+    outline-offset: 2px;
+}
+ul, ol {
+    padding-left: var(--spacing-md);
+    margin-block-end: var(--spacing-sm);
+}
+
+
+/* =========================================================================
+   3. OBJECTS: Layout Patterns (Container, Grid, Stack)
+   ========================================================================= */
+
+/* Main Page Padding */
+.section-padding {
+    padding: var(--spacing-xl) 0;
+}
+
+.container { 
+    max-width: var(--layout-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+}
+
+.o-stack { /* Stack layout with gap */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.o-grid { /* Responsive Grid Layout */
+    display: grid;
+    /* Intrinsic Responsive Grid: as many columns as fit (min 250px) */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+/* Custom grid for Option 2 (2fr 1fr columns on large screens) */
+@media (min-width: 1000px) {
+    #latest-updates .o-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+
+/* =========================================================================
+   4. COMPONENTS: Styled UI Modules (Nav, Card, Button, Scroll)
+   ========================================================================= */
+
+/* Component: Header Layout Anchor */
+.header {
+    position: relative; 
+    background-color: var(--color-white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sharper shadow for formal look */
+    padding: var(--spacing-sm) 0;
+}
+
+/* Component: Navigation Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Added style for better logo group layout */
+.logo-group {
+    display: flex; 
+    align-items: center; 
+    gap: 15px;
+}
+.logo-group img {
+    height: 40px; 
+    width: auto;
+}
+.logo a {
+    text-decoration: none !important; 
+    display: flex; 
+    align-items: center;
+}
+
+/* Component: Navigation Links List */
+.nav-menu { 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+/* Component: Menu Toggle Button */
+.menu-toggle { 
+    display: none; 
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    padding: 0;
+}
+
+/* Active link style */
+.nav-menu a.active {
+    font-weight: 700;
+    color: var(--color-accent); /* Active color uses accent */
+    text-decoration: underline;
+}
+
+/* Responsive Media Query: Mobile View */
+@media (max-width: 800px) {
+   .nav-menu { 
+        display: none;
+    }
+    
+   .menu-toggle { 
+        display: block; 
+        order: 2; 
+    }
+    
+   .logo-group {
+        order: 1; 
+        gap: 8px;
+    }
+    .logo-group img {
+        height: 30px;
+    }
+    .logo a span {
+        font-size: 1.2rem !important;
+    }
+
+
+    /* State toggled by script.js: Open Menu Overlay */
+   .navbar.c-nav--is-open .nav-menu { 
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        
+        /* Overlay positioning */
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: var(--color-background-soft);
+        padding: var(--spacing-md);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: var(--z-layer-nav);
+        
+        /* Make links full width inside the overlay */
+        & li { width: 100%; }
+        & a { display: block; padding: 0.75rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: var(--color-primary); }
+        & li:last-child a { border-bottom: none; }
+    }
+}
+
+/* Component: Button */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none !important; 
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+    transform: translateY(-2px); /* Slightly more prominent lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Primary Button (for Join Today/Register) */
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    /* Slightly darker accent color on hover */
+    background-color: color-mix(in srgb, var(--color-accent) 90%, var(--color-primary));
+    color: var(--color-white);
+    outline: none; 
+    border-color: var(--color-accent);
+}
+
+/* Secondary Button (General) */
+.btn:not(.btn-primary) {
+    background-color: transparent;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn:not(.btn-primary):hover,
+.btn:not(.btn-primary):focus-visible {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+
+
+/* Component: Card for Mission/Value Section */
+.card {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--color-accent);
+    text-align: left;
+}
+.card h3 {
+    color: var(--color-accent); /* Card titles use the accent color */
+    margin-block-end: var(--spacing-xs);
+}
+.card p {
+    color: var(--color-text-subtle);
+    font-size: 0.95rem;
+}
+
+
+/* NEW: Home Page Highlight Images */
+#club-highlights img {
+    transition: transform 0.3s ease-in-out;
+}
+#club-highlights figure:hover img {
+    transform: scale(1.05);
+}
+
+/* NEW: Gallery Page Styles (for gallery.html) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.gallery-item {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.gallery-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover; 
+    display: block;
+}
+
+.gallery-item figcaption {
+    padding: var(--spacing-sm);
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+
+/* Component: Scroll-to-Top Button */
+#scroll-to-top {
+    position: fixed;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 40px; 
+    height: 40px;
+    line-height: 40px; 
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 99; 
+    font-size: 1.2rem;
+}
+
+/* Class added by JavaScript when scroll position is past a threshold */
+#scroll-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Component: Footer Styling */
+.footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-md) 0;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.footer p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.footer-nav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.footer-nav a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-nav a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+    .footer-nav {
+        justify-content: center;
+        margin-top: var(--spacing-sm);
+    }
+}

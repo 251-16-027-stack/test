@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIS Club - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="container navbar">
+            <div class="logo-group">
+                <img src="images/university_logo.png" alt="University Logo">
+                
+                <div class="logo"> 
+                    <a href="index.html">
+                        <img src="images/club_logo.png" alt="CIS Club Logo">
+                        <span style="font-weight: 700; font-size: 1.5rem; color: var(--color-primary);">CIS Club</span>
+                    </a>
+                </div>
+            </div>
+            
+            <button class="menu-toggle">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="members.html">Members/Join</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" style="
+            background-color: var(--color-primary); 
+            /* Replace 'images/hero_club_photo.jpg' with your actual image path */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('images/hero_club_photo.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            padding: var(--spacing-xl) 0; 
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        ">
+            <div class="container slide-content" style="color: var(--color-white); max-width: 900px; margin: 0 auto;">
+                <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">Code. Collaborate. Conquer.</h1>
+                <p style="font-size: 1.5rem; margin-bottom: 2rem; font-weight: 300;">Your hub for technology, innovation, and career acceleration at DIU.</p>
+                
+                <button id="actionButton" class="btn btn-primary" style="margin-top: 15px; font-size: 1.25rem; padding: 1rem 2rem;">Register for the Next Event</button>
+                <p id="message" style="margin-top: 15px; font-style: italic; color: rgba(255, 255, 255, 0.7);">Click the button to check registration status.</p>
+            </div>
+        </section>
+
+        <section id="club-highlights" class="section-padding" style="background-color: var(--color-background-soft);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: var(--spacing-lg);">Our Best Moments</h2>
+                
+                <div class="o-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 0;">
+                    <figure class="card" style="border-left: none; padding: 0; box-shadow: none;">
+                        <img src="images/club_event_1.jpg" alt="Students collaborating during a club workshop." style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+                        <figcaption style="padding: var(--spacing-sm); font-size: 0.95rem; font-weight: 600;">Code Workshop 2025</figcaption>
+                    </figure>
+                    <figure class="card" style="border-left: none; padding: 0; box-shadow: none;">
+                        <img src="images/club_event_2.jpg" alt="A large group photo of club members." style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+                        <figcaption style="padding: var(--spacing-sm); font-size: 0.95rem; font-weight: 600;">Annual Team Photo</figcaption>
+                    </figure>
+                    <figure class="card" style="border-left: none; padding: 0; box-shadow: none;">
+                        <img src="images/club_event_3.jpg" alt="A mentor giving a lecture at a tech talk." style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+                        <figcaption style="padding: var(--spacing-sm); font-size: 0.95rem; font-weight: 600;">Industry Tech Talk</figcaption>
+                    </figure>
+                </div>
+
+                <div style="text-align: center; margin-top: var(--spacing-md);">
+                    <a href="gallery.html" class="btn">View Full Gallery →</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="latest-updates" class="section-padding" style="background-color: var(--color-white);">
+            <div class="container">
+                <h2 style="text-align: center;">Latest Activity & Resources</h2>
+                
+                <div class="o-grid" style="grid-template-columns: 2fr 1fr; margin-top: var(--spacing-lg);">
+                    
+                    <div class="featured-event-card card" style="border-left: 5px solid var(--color-accent); padding: var(--spacing-md);">
+                        <h3 style="color: var(--color-primary);">Upcoming: Python Programming Workshop</h3>
+                        <p><strong>Date: October 10, 2025 | Time: 4:00 PM | Room: CS-405</strong></p>
+                        <p style="color: var(--color-text-subtle);">Master the fundamentals of Python, from basic syntax to object-oriented programming. Perfect for beginners and intermediate coders. Limited seats available.</p>
+                        <a href="events.html" class="btn btn-primary" style="margin-top: var(--spacing-sm);">See Full Details</a>
+                    </div>
+
+                    <div class="quick-links o-stack">
+                        <a href="resources.html" class="card" style="text-decoration: none; padding: var(--spacing-md); background-color: var(--color-background-soft);">
+                            <h4 style="color: var(--color-primary); margin: 0;">Access Project Templates →</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">Start your next assignment faster.</p>
+                        </a>
+                        <a href="gallery.html" class="card" style="text-decoration: none; padding: var(--spacing-md); background-color: var(--color-background-soft);">
+                            <h4 style="color: var(--color-primary); margin: 0;">View Event Photos →</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">Check out the latest hackathon gallery.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mission-join" class="section-padding" style="background-color: var(--color-background-soft); text-align: center;">
+            <div class="container">
+                <h2>Our Purpose</h2>
+                <p style="max-width: 700px; margin: 0 auto var(--spacing-lg);">The CIS Club exists to foster a community of **curiosity, skill-building, and professional growth** for every student in the department.</p>
+                <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CIS Club. All rights reserved. Daffodil International University.</p>
+            <ul class="footer-nav">
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="members.html">Become a Member</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <button id="scroll-to-top" aria-label="Scroll to Top">▲</button>
+
+    <script src="app.js"></script>
+    <script defer src="script.js"></script>
+</body>
+</html>

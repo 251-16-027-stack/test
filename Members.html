@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIS Club - Join Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="container navbar">
+            <div class="logo"><a href="index.html">CIS Club</a></div>
+            <button class="menu-toggle">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="members.html" class="active">Members/Join</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section-padding">
+            <div class="container">
+                <h1>Become a CIS Club Member</h1>
+
+                <!-- Benefits Section -->
+                <article style="margin-bottom: 40px;">
+                    <h2>Membership Benefits</h2>
+                    <ul style="list-style: disc; padding-left: 20px;">
+                        <li>Exclusive access to paid workshops and seminars.</li>
+                        <li>Priority registration for annual hackathons and competitions.</li>
+                        <li>Mentorship opportunities with senior students and alumni.</li>
+                        <li>Eligibility to join the Executive Team and gain leadership experience.</li>
+                    </ul>
+                </article>
+
+                <!-- Join Form -->
+                <div class="form-container">
+                    <h2 style="margin-bottom: 20px;">Membership Application Form</h2>
+                    <form id="join-form" aria-live="polite" novalidate>
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name <span aria-hidden="true">*</span></label>
+                            <input type="text" id="name" name="name" required aria-required="true">
+                            <span class="error-message">Full Name is required.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="student-id">Student ID <span aria-hidden="true">*</span></label>
+                            <input type="text" id="student-id" name="student-id" required aria-required="true">
+                            <span class="error-message">Student ID is required.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                            <input type="email" id="email" name="email" required aria-required="true">
+                            <span class="error-message">A valid Email Address is required.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" name="dob">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="semester">Current Semester <span aria-hidden="true">*</span></label>
+                            <select id="semester" name="semester" required aria-required="true">
+                                <option value="" disabled selected>Select your current semester</option>
+                                <option value="1">1st Semester</option>
+                                <option value="2">2nd Semester</option>
+                                <option value="3">3rd Semester</option>
+                                <option value="4">4th Semester +</option>
+                            </select>
+                            <span class="error-message">Please select your current semester.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Areas of Interest <span aria-hidden="true">*</span></label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="interest" value="web" required> Web Development</label>
+                                <label><input type="checkbox" name="interest" value="ai"> AI/Machine Learning</label>
+                                <label><input type="checkbox" name="interest" value="security"> Cyber Security</label>
+                                <label><input type="checkbox" name="interest" value="gaming"> Game Development</label>
+                            </div>
+                            <span class="error-message">Please select at least one area of interest.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="motivation">Why do you want to join the CIS Club?</label>
+                            <textarea id="motivation" name="motivation" rows="4"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
+
+                        <div id="form-status" role="status" aria-atomic="true"></div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CIS Club. All rights reserved. Daffodil International University.</p>
+            <ul class="footer-nav">
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="members.html">Become a Member</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <button id="scroll-to-top" aria-label="Scroll to Top">▲</button>
+
+    <script src="app.js"></script>
+</body>
+</html>
